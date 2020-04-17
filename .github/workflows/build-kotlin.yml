@@ -1,0 +1,49 @@
+name: Build Kotlin and Kotlin/Native
+
+on:
+  schedule:
+  - cron: 0 * * * *
+
+jobs:
+  check-latest-version:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Update versions
+      run: |
+        # Fetch latest version.
+        VERSION=`wget -qO- https://api.github.com/repos/JetBrains/kotlin/releases/latest | python -c 'import sys, json; print(json.load(sys.stdin)["tag_name"][1:])'`
+        [ -z "$VERSION" ] && exit 1
+
+        # Update specs.
+        for spec in kotlin.spec kotlin-native.spec; do
+          sed -i -r '/(Version:\s*).+/{s//\1'$VERSION'/;h};${x;/./{x;q0};x;q1}' $spec
+        done
+
+        # Set new version for subsequent steps
+        git diff --quiet || echo "::set-env name=VERSION::$VERSION"
+
+    - name: Update changelogs
+      if: env.VERSION != ''
+      run: |
+        CHANGELOG="* $(date +'%a %b %d %Y') Gonçalo Silva <goncalossilva@gmail.com>\n- Update to $VERSION"
+        sed -i "/%changelog/a $CHANGELOG" kotlin.spec
+        sed -i "/%changelog/a $CHANGELOG" kotlin-native.spec
+
+    - name: Commit
+      if: env.VERSION != ''
+      run: |
+        git config --global user.name "Gonçalo Silva"
+        git config --global user.email "goncalossilva@gmail.com"
+        git commit -am "Kotlin $VERSION"
+        git push
+
+    - name: Build on Copr
+      if: env.VERSION != ''
+      env:
+        WEBHOOK_COPR: ${{ secrets.WEBHOOK_COPR }}
+      run: |
+        for package in kotlin kotlin-native; do
+          curl -X POST "$WEBHOOK_COPR/$package/" --retry 10
+        done
