@@ -20,7 +20,7 @@ jobs:
         sed -i -r '/(Version:\s*).+/{s//\1'$VERSION'/;h};${x;/./{x;q0};x;q1}' detekt.spec
 
         # Set new version for subsequent steps
-        git diff --quiet || echo "::set-env name=VERSION::$VERSION"
+        git diff --quiet || echo "VERSION=$VERSION" >> $GITHUB_ENV
 
     - name: Update changelog
       if: env.VERSION != ''

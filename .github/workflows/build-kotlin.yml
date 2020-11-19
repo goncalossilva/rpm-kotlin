@@ -22,7 +22,7 @@ jobs:
         done
 
         # Set new version for subsequent steps
-        git diff --quiet || echo "::set-env name=VERSION::$VERSION"
+        git diff --quiet || echo "VERSION=$VERSION" >> $GITHUB_ENV
 
     - name: Update changelogs
       if: env.VERSION != ''
