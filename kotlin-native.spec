@@ -3,7 +3,7 @@
 BuildRoot:          %{_tmppath}/%{name}-%{version}-build
 BuildArchitectures: noarch
 Name:               kotlin-native
-Version:            1.4.30
+Version:            1.4.31
 Release:            1%{?dist}
 Summary:            LLVM backend for the Kotlin compiler
 
@@ -77,6 +77,8 @@ kotlinc-native test.kt -o test
 
 
 %changelog
+* Fri Feb 26 2021 Gonçalo Silva <goncalossilva@gmail.com>
+- Update to 1.4.31
 * Wed Feb 03 2021 Gonçalo Silva <goncalossilva@gmail.com>
 - Update to 1.4.30
 * Mon Jan 18 2021 Gonçalo Silva <goncalossilva@gmail.com>
