@@ -7,7 +7,7 @@ Summary:            Static code analysis for Kotlin.
 
 License:            ASL 2.0
 URL:                https://detekt.github.io/detekt/
-Source0:            https://github.com/detekt/detekt/releases/download/v%{version}/detekt
+Source0:            https://github.com/detekt/detekt/releases/download/v%{version}/detekt-cli-%{version}-all.jar
 Source1:            https://raw.githubusercontent.com/detekt/detekt/v%{version}/LICENSE
 
 BuildRequires:      bash
@@ -21,9 +21,15 @@ reports based on lines of code, cyclomatic complexity and code smells.
 Integrates with Gradle, Maven, SonarQube and IntelliJ.
 
 
+%prep
+printf '#!/bin/sh\n\nexec java -jar "$0" "$@"\n\n' > detekt
+cat %{SOURCE0} >> detekt
+mv detekt %{SOURCE0}
+
+
 %install
 rm -rf %{buildroot} && mkdir -p %{buildroot}%{_bindir}/
-install -m 0755 %{SOURCE0} %{buildroot}%{_bindir}/
+install -m 0755 %{SOURCE0} %{buildroot}%{_bindir}/detekt
 mkdir -p %{buildroot}%{_datadir}/licenses/%{name}/
 install -m 0644 %{SOURCE1} %{buildroot}%{_datadir}/licenses/%{name}/
 
