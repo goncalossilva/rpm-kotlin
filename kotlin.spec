@@ -1,19 +1,19 @@
-BuildRoot:          %{_tmppath}/%{name}-%{version}-build
-BuildArchitectures: noarch
-Name:               kotlin
-Version:            1.4.32
-Release:            1%{?dist}
-Summary:            Statically typed programming language
+BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+BuildArch:      noarch
+Name:           kotlin
+Version:        1.4.32
+Release:        1%{?dist}
+Summary:        Statically typed programming language
 
-License:            ASL 2.0
-URL:                https://kotlinlang.org/
-Source0:            https://github.com/JetBrains/kotlin/releases/download/v%{version}/kotlin-compiler-%{version}.zip
+License:        ASL 2.0
+URL:            https://kotlinlang.org/
+Source0:        https://github.com/JetBrains/kotlin/releases/download/v%{version}/kotlin-compiler-%{version}.zip
 
-BuildRequires:      unzip
-BuildRequires:      sed
-BuildRequires:      bash
-BuildRequires:      (java-headless >= 1:1.8.0 or java >= 1.8.0)
-Requires:           (java-headless >= 1:1.8.0 or java >= 1.8.0)
+BuildRequires:  unzip
+BuildRequires:  sed
+BuildRequires:  bash
+BuildRequires:  (java-headless >= 1:1.8.0 or java >= 1.8.0)
+Requires:       (java-headless >= 1:1.8.0 or java >= 1.8.0)
 
 
 %description

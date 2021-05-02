@@ -1,24 +1,24 @@
 %define _binaries_in_noarch_packages_terminate_build   0
 
-BuildRoot:          %{_tmppath}/%{name}-%{version}-build
-BuildArchitectures: noarch
-Name:               kotlin-native
-Version:            1.4.32
-Release:            1%{?dist}
-Summary:            LLVM backend for the Kotlin compiler
+BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+BuildArch:      noarch
+Name:           kotlin-native
+Version:        1.4.32
+Release:        1%{?dist}
+Summary:        LLVM backend for the Kotlin compiler
 
-License:            ASL 2.0
-URL:                https://kotlinlang.org/docs/reference/native-overview.html
-Source0:            https://github.com/JetBrains/kotlin/releases/download/v%{version}/kotlin-native-linux-%{version}.tar.gz
+License:        ASL 2.0
+URL:            https://kotlinlang.org/docs/reference/native-overview.html
+Source0:        https://github.com/JetBrains/kotlin/releases/download/v%{version}/kotlin-native-linux-%{version}.tar.gz
 
-BuildRequires:      tar
-BuildRequires:      sed
-BuildRequires:      bash
-BuildRequires:      (java-headless >= 1:1.8.0 or java >= 1.8.0)
-Requires:           (java-headless >= 1:1.8.0 or java >= 1.8.0)
-Requires:           ncurses-compat-libs
-Suggests:           python
-Suggests:           lldb
+BuildRequires:  tar
+BuildRequires:  sed
+BuildRequires:  bash
+BuildRequires:  (java-headless >= 1:1.8.0 or java >= 1.8.0)
+Requires:       (java-headless >= 1:1.8.0 or java >= 1.8.0)
+Requires:       ncurses-compat-libs
+Suggests:       python
+Suggests:       lldb
 
 
 %description

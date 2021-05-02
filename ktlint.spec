@@ -1,18 +1,18 @@
-BuildRoot:          %{_tmppath}/%{name}-%{version}-build
-BuildArchitectures: noarch
-Name:               ktlint
-Version:            0.41.0
-Release:            1%{?dist}
-Summary:            Anti-bikeshedding Kotlin linter with built-in formatter.
+BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+BuildArch:      noarch
+Name:           ktlint
+Version:        0.41.0
+Release:        1%{?dist}
+Summary:        Anti-bikeshedding Kotlin linter with built-in formatter.
 
-License:            MIT
-URL:                https://ktlint.github.io/
-Source0:            https://github.com/pinterest/ktlint/releases/download/%{version}/ktlint
-Source1:            https://raw.githubusercontent.com/pinterest/ktlint/%{version}/LICENSE
+License:        MIT
+URL:            https://ktlint.github.io/
+Source0:        https://github.com/pinterest/ktlint/releases/download/%{version}/ktlint
+Source1:        https://raw.githubusercontent.com/pinterest/ktlint/%{version}/LICENSE
 
-BuildRequires:      bash
-BuildRequires:      (java-headless >= 1:1.8.0 or java >= 1.8.0)
-Requires:           (java-headless >= 1:1.8.0 or java >= 1.8.0)
+BuildRequires:  bash
+BuildRequires:  (java-headless >= 1:1.8.0 or java >= 1.8.0)
+Requires:       (java-headless >= 1:1.8.0 or java >= 1.8.0)
 
 
 %description

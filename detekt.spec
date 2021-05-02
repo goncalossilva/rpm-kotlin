@@ -1,18 +1,18 @@
-BuildRoot:          %{_tmppath}/%{name}-%{version}-build
-BuildArchitectures: noarch
-Name:               detekt
-Version:            1.17.0-RC1
-Release:            1%{?dist}
-Summary:            Static code analysis for Kotlin.
+BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+BuildArch:      noarch
+Name:           detekt
+Version:        1.17.0-RC1
+Release:        1%{?dist}
+Summary:        Static code analysis for Kotlin.
 
-License:            ASL 2.0
-URL:                https://detekt.github.io/detekt/
-Source0:            https://github.com/detekt/detekt/releases/download/v%{version}/detekt-cli-%{version}-all.jar
-Source1:            https://raw.githubusercontent.com/detekt/detekt/v%{version}/LICENSE
+License:        ASL 2.0
+URL:            https://detekt.github.io/detekt/
+Source0:        https://github.com/detekt/detekt/releases/download/v%{version}/detekt-cli-%{version}-all.jar
+Source1:        https://raw.githubusercontent.com/detekt/detekt/v%{version}/LICENSE
 
-BuildRequires:      bash
-BuildRequires:      (java-headless >= 1:1.8.0 or java >= 1.8.0)
-Requires:           (java-headless >= 1:1.8.0 or java >= 1.8.0)
+BuildRequires:  bash
+BuildRequires:  (java-headless >= 1:1.8.0 or java >= 1.8.0)
+Requires:       (java-headless >= 1:1.8.0 or java >= 1.8.0)
 
 
 %description
