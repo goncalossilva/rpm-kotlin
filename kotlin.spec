@@ -1,7 +1,7 @@
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
 Name:           kotlin
-Version:        1.5.20
+Version:        1.5.21
 Release:        1%{?dist}
 Summary:        Statically typed programming language
 
@@ -68,6 +68,8 @@ kotlinc test.kt && %{buildroot}%{_bindir}/kotlin TestKt
 
 
 %changelog
+* Tue Jul 13 2021 Gonçalo Silva <goncalossilva@gmail.com>
+- Update to 1.5.21
 * Thu Jun 24 2021 Gonçalo Silva <goncalossilva@gmail.com>
 - Update to 1.5.20
 * Mon May 24 2021 Gonçalo Silva <goncalossilva@gmail.com>
