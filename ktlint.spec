@@ -1,7 +1,7 @@
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
 Name:           ktlint
-Version:        0.45.1
+Version:        0.45.2
 Release:        1%{?dist}
 Summary:        Anti-bikeshedding Kotlin linter with built-in formatter.
 
@@ -48,6 +48,8 @@ output=$(< output.txt)
 
 
 %changelog
+* Thu Apr 07 2022 Gonçalo Silva <goncalossilva@gmail.com>
+- Update to 0.45.2
 * Thu Apr 07 2022 Gonçalo Silva <goncalossilva@gmail.com>
 - Update to 0.45.1
 * Wed Apr 06 2022 Gonçalo Silva <goncalossilva@gmail.com>
