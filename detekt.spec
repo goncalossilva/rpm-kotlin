@@ -1,7 +1,7 @@
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
 Name:           detekt
-Version:        1.23.5
+Version:        1.23.6
 Release:        1%{?dist}
 Summary:        Static code analysis for Kotlin.
 
@@ -58,6 +58,8 @@ output=$(< output.txt)
 
 
 %changelog
+* Mon Mar 25 2024 Gonçalo Silva <goncalossilva@gmail.com>
+- Update to 1.23.6
 * Wed Jan 31 2024 Gonçalo Silva <goncalossilva@gmail.com>
 - Update to 1.23.5
 * Sun Nov 26 2023 Gonçalo Silva <goncalossilva@gmail.com>
