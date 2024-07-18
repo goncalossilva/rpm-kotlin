@@ -9,7 +9,7 @@ Summary:        LLVM backend for the Kotlin compiler
 
 License:        ASL 2.0
 URL:            https://kotlinlang.org/docs/reference/native-overview.html
-Source0:        https://github.com/JetBrains/kotlin/releases/download/v%{version}/kotlin-native-linux-%{version}.tar.gz
+Source0:        https://github.com/JetBrains/kotlin/releases/download/v%{version}/kotlin-native-prebuilt-linux-%{_arch}-%{version}.tar.gz
 
 BuildRequires:  tar
 BuildRequires:  sed
